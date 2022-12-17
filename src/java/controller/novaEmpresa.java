@@ -3,6 +3,7 @@ package controller;
 import dao.Banco;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -25,20 +26,9 @@ public class novaEmpresa extends HttpServlet {
             Banco banco = new Banco();
             banco.adicionar(empresa);
             
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet novaEmpresa</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("</br>");
-            out.println("Empresa: "+ nomeEmpresa +" ");
-            out.println("</br>");
-            out.println("Cadastrada com sucesso. ");
-            out.println("</br>");
-            out.println("<a href='/ListaEmpresas'>Lista de Empresas</a>");
-            out.println("</body>");
-            out.println("</html>");
+            RequestDispatcher rd = request.getRequestDispatcher("/cadastro.jsp");
+            request.setAttribute("empresa", empresa.getName());
+            rd.forward(request, response);
         }
     }
 
