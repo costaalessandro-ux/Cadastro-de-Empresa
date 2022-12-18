@@ -12,7 +12,7 @@
     </head>
     <body>
         <h2>
-        <strong> A empresa <%=nomeEmpresa%> foi cadastrada com sucesso </strong>
+        <strong> A empresa ${ empresa } foi cadastrada com sucesso </strong>
         </h2>        
         </br>
         <a href='/ListaEmpresas'>Lista de Empresas</a>

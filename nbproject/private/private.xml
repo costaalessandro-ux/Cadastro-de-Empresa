@@ -3,12 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/costa/OneDrive/Documentos/NetBeansProjects/empresaCad/src/java/model/Empresa.java</file>
             <file>file:/C:/Users/costa/OneDrive/Documentos/NetBeansProjects/empresaCad/src/java/controller/novaEmpresa.java</file>
-            <file>file:/C:/Users/costa/OneDrive/Documentos/NetBeansProjects/empresaCad/src/java/controller/servlet.java</file>
-            <file>file:/C:/Users/costa/OneDrive/Documentos/NetBeansProjects/empresaCad/web/index.html</file>
-            <file>file:/C:/Users/costa/OneDrive/Documentos/NetBeansProjects/empresaCad/src/java/dao/Banco.java</file>
-            <file>file:/C:/Users/costa/OneDrive/Documentos/NetBeansProjects/empresaCad/src/java/controller/ListaEmpresas.java</file>
+            <file>file:/C:/Users/costa/OneDrive/Documentos/NetBeansProjects/empresaCad/web/cadastro.jsp</file>
         </group>
     </open-files>
 </project-private>
