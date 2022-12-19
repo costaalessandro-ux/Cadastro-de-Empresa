@@ -1,6 +1,8 @@
 <%@page import="java.util.List"%>
 <%@page import="model.Empresa"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%
     List<Empresa> lista = (List<Empresa>)request.getAttribute("lista");
 %>
@@ -8,18 +10,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
+        <title>java Stabdard TagLib</title>
     </head>
     <body>
-        <h1>Lista de Empresas Cadastradas</h1>
+        <!-- Utilizando JSTL -->
+        <h1>Lista de Empresas </h1>
         <ul>
-            <%
-            for(Empresa empresa : lista){
-            %>
-            <li><%= empresa.getName() %></li>
-            <%
-            }
-            %>
+            <c:forEach items="${lista}" var="empresa">
+                <li>${ empresa.name } - <fmt:formatDate value="${ empresa.dataAbertura }" pattern="dd/MM/yyyy"/> </li>
+            </c:forEach>
         </ul>
         </br>
         <a href='/index.html'>Voltar</a>

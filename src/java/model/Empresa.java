@@ -1,9 +1,12 @@
 package model;
 
+import java.util.Date;
+
 public class Empresa {
     
     private int id;
     private String name; 
+    private Date dataAbertura = new Date();
     
     public Empresa(){
         
@@ -17,6 +20,10 @@ public class Empresa {
         return name;
     }
     
+    public Date getDataAbertura(){
+        return dataAbertura;
+    }
+    
     public void setId(int id){
         this.id = id;
     }
@@ -24,5 +31,10 @@ public class Empresa {
     public void setName(String name){
         this.name = name;
     }
+ 
+    public void setDataAbertura(Date dataAbertura){
+        this.dataAbertura = dataAbertura;
+    }
+    
     
 }

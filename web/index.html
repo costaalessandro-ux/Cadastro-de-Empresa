@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
 <html>
     <head>
         <title>Gerenciador de Empresas</title>
@@ -12,9 +8,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     <body>
         <div><h1>Gerenciador de Empresas</h1></div>
         <form method="post" action="/novaEmpresa">
-            Nome:<input type="text" name="nome" id="nome">
+            Nome:<input type="text" name="nome" id="nome"></br>
+            Data de Abertura:<input type="text" name="data" id="data">
             <input type="submit" value="Enviar"></br>
         </form>
+        </br>
         <a href="/ListaEmpresas">Lista de Empresas</a>
     </body>
 </html>

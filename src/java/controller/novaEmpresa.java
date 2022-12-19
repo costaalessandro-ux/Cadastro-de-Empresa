@@ -3,6 +3,9 @@ package controller;
 import dao.Banco;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,14 +18,24 @@ import model.Empresa;
 public class novaEmpresa extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException{
         
        try ( PrintWriter out = response.getWriter()) {
             
             String nomeEmpresa = request.getParameter("nome"); 
+            String paramdataAbertura = request.getParameter("data");
+            
+            Date dataAbertura = null;
+            try{
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            dataAbertura = sdf.parse(paramdataAbertura);
+            }catch(ParseException e){
+                throw new ServletException(e);
+            }
+            
             Empresa empresa = new Empresa();
             empresa.setName(nomeEmpresa);
-            
+            empresa.setDataAbertura(dataAbertura);
             Banco banco = new Banco();
             banco.adicionar(empresa);
             
