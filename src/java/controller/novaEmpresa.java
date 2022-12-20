@@ -37,11 +37,19 @@ public class novaEmpresa extends HttpServlet {
         empresa.setDataAbertura(dataAbertura);
         Banco banco = new Banco();
         banco.adicionar(empresa);
-        List<Empresa> lista = banco.getEmpresas();
-        request.setAttribute("lista", lista);
+        
+        /*
+        Este código foi utilizado para dispachar para a outra servlet,
+        mas não será usado no momento! Iremos usar response.sendrRedirect.
+        
         request.setAttribute("empresa", empresa.getName());
         RequestDispatcher rd = request.getRequestDispatcher("/ListaEmpresas");
         rd.forward(request, response);
+        */
+        
+        request.setAttribute("empresa", empresa.getName());
+        response.sendRedirect("ListaEmpresas");
+    
     }
 
     @Override
