@@ -7,9 +7,9 @@
     </head>
     <body>
         <div><h1>Gerenciador de Empresas</h1></div>
-        <form method="post" action="/novaEmpresa">
-            Nome:<input type="text" name="nome" id="nome"></br>
-            Data de Abertura:<input type="text" name="data" id="data">
+        <form action="/novaEmpresa" method="post">
+            Nome:<input type="text" name="nome" id="nome" required></br>
+            Data de Abertura:<input type="text" name="data" id="data" required>
             <input type="submit" value="Enviar"></br>
         </form>
         </br>
