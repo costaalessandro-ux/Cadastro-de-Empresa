@@ -31,16 +31,25 @@ public class Banco {
     }
 
     public void removeEmpresa(Integer id) {
-        
+
         Iterator<Empresa> it = lista.iterator();
-        
-        while(it.hasNext()){
+
+        while (it.hasNext()) {
             Empresa emp = it.next();
-            if (emp.getId() == id){
+            if (emp.getId() == id) {
                 it.remove();
             }
         }
- 
+
+    }
+
+    public Empresa buscaEmpresaPeloId(Integer id) {
+        for (Empresa empresa : lista){
+            if(empresa.getId() == id){
+                return empresa;
+            }
+        }
+        return null;
     }
 
 }
