@@ -13,7 +13,7 @@ import model.Empresa;
 
 public class novaEmpresa {
     
-    public void executar(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
+    public String executar(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
         
         String nomeEmpresa = request.getParameter("nome");
         String paramdataAbertura = request.getParameter("data");
@@ -42,7 +42,7 @@ public class novaEmpresa {
         */
         
         request.setAttribute("empresa", empresa.getName());
-        response.sendRedirect("/Servlet?acao=ListaEmpresas");
+        return "redirect:Servlet?acao=ListaEmpresas";
     }
     
 }

@@ -10,14 +10,13 @@ import model.Banco;
 import model.Empresa;
 
 public class ListaEmpresas {
-    
-    public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+
+    public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Banco banco = new Banco();
-            List<Empresa> lista = banco.getEmpresas();
-            RequestDispatcher rd = request.getRequestDispatcher("/ListaEmpresa.jsp");
-            request.setAttribute("lista", lista);
-            rd.forward(request, response);
+        List<Empresa> lista = banco.getEmpresas();
+        request.setAttribute("lista", lista);
+        // aqui irá mandar para a servlet, é tipo um dispatecher;
+        return "forward:ListaEmpresa.jsp";
     }
-    
-    
+
 }

@@ -20,7 +20,7 @@ import model.Empresa;
  */
 public class alterarEmpresa {
     
-    public void executar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+    public String executar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
          String paramId = request.getParameter("id");
         String nomeEmpresa = request.getParameter("nome");
         String paramdataAbertura = request.getParameter("data");
@@ -32,11 +32,10 @@ public class alterarEmpresa {
         } catch (ParseException e) {
             throw new ServletException(e);
         }
-
         Banco banco = new Banco();
         Empresa empresa = banco.buscaEmpresaPeloId(id);
         empresa.setName(nomeEmpresa);
         empresa.setDataAbertura(dataAbertura);
-        response.sendRedirect("/Servlet?acao=ListaEmpresas");
+        return "redirect:Servlet?acao=ListaEmpresas";
     }
 }

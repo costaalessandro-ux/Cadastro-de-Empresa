@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package controller;
 
 import java.io.IOException;
@@ -13,13 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import model.Banco;
 import model.Empresa;
 
-/**
- *
- * @author costa
- */
 public class mostrarEmpresa {
     
-    public void executar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+    public String executar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         try ( PrintWriter out = response.getWriter()) {
             String paramId = request.getParameter("id");
             Integer id = Integer.valueOf(paramId);
@@ -31,6 +24,7 @@ public class mostrarEmpresa {
             RequestDispatcher rd = request.getRequestDispatcher("/alterar.jsp");
             rd.forward(request, response);
         }
+        return "forward:alterar.jsp";
     }
     
 }
