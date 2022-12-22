@@ -7,11 +7,12 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form action="/alterarEmpresa" method="post">
+        <form action="/Servlet" method="post">
+            <input type="hidden" name="acao" id="acao" value="alterarEmpresa"></br>
             <input type="hidden" name="id" id="id" value="${empresa.id}">
             Nome:<input type="text" name="nome" id="nome" value="${empresa.name}"></br>
             Data de Abertura:<input type="text" name="data" id="data" value="<fmt:formatDate value="${ empresa.dataAbertura }" pattern="dd/MM/yyyy"/> ">
-            <input type="submit" value="Enviar"></br>
+            <input type="submit" name="acao=alterarEmpresa" value="Enviar"></br>
         </form>
     </body>
 </html>

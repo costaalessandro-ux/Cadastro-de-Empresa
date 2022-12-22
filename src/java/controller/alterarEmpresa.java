@@ -1,28 +1,27 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package controller;
 
-import model.Banco;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Banco;
 import model.Empresa;
 
-@WebServlet(name = "alterarEmpresa", urlPatterns = {"/alterarEmpresa"})
-public class alterarEmpresa extends HttpServlet {
-
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-        
-        String paramId = request.getParameter("id");
+/**
+ *
+ * @author costa
+ */
+public class alterarEmpresa {
+    
+    public void executar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+         String paramId = request.getParameter("id");
         String nomeEmpresa = request.getParameter("nome");
         String paramdataAbertura = request.getParameter("data");
         Integer id = Integer.valueOf(paramId);
@@ -38,27 +37,6 @@ public class alterarEmpresa extends HttpServlet {
         Empresa empresa = banco.buscaEmpresaPeloId(id);
         empresa.setName(nomeEmpresa);
         empresa.setDataAbertura(dataAbertura);
-        
-        response.sendRedirect("ListaEmpresas");
-            
-        }
+        response.sendRedirect("/Servlet?acao=ListaEmpresas");
     }
-    
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
 }

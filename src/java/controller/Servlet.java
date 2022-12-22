@@ -12,8 +12,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Banco;
-import model.Empresa;
 
 @WebServlet(name = "Servlet", urlPatterns = {"/Servlet"})
 public class Servlet extends HttpServlet {
@@ -24,17 +22,21 @@ public class Servlet extends HttpServlet {
 
         String paramAcao = request.getParameter("acao");
         if (paramAcao.equals("ListaEmpresas")) {
-            Banco banco = new Banco();
-            List<Empresa> lista = banco.getEmpresas();
-            RequestDispatcher rd = request.getRequestDispatcher("/ListaEmpresa.jsp");
-            request.setAttribute("lista", lista);
-            rd.forward(request, response);
-        } else if (paramAcao.equals("acao")) {
-
-        } else if (paramAcao.equals("acao")) {
-
-        } else if (paramAcao.equals("acao")) {
-
+            ListaEmpresas acao = new ListaEmpresas();
+            acao.executa(request, response);
+        } else if (paramAcao.equals("novaEmpresa")) {
+            novaEmpresa acao = new novaEmpresa();
+            acao.executar(request,response);
+            System.out.println("Deu certo");
+        } else if (paramAcao.equals("mostrarEmpresa")) {
+            mostrarEmpresa acao = new mostrarEmpresa();
+            acao.executar(request, response);
+        }else if (paramAcao.equals("alterarEmpresa")) {
+            alterarEmpresa acao = new alterarEmpresa();
+            acao.executar(request, response);
+        } else if (paramAcao.equals("removeEmpresa")) {
+            removeEmpresa acao = new removeEmpresa();
+            acao.executa(request, response);
         }
     }
 
