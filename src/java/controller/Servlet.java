@@ -23,18 +23,17 @@ public class Servlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         String paramAcao = request.getParameter("acao");
-        if (paramAcao.equals("ListaEmpresa")) {
+        if (paramAcao.equals("ListaEmpresas")) {
             Banco banco = new Banco();
             List<Empresa> lista = banco.getEmpresas();
             RequestDispatcher rd = request.getRequestDispatcher("/ListaEmpresa.jsp");
             request.setAttribute("lista", lista);
             rd.forward(request, response);
+        } else if (paramAcao.equals("acao")) {
 
-        } else if (paramAcao.equals("ListaEmpresa")) {
+        } else if (paramAcao.equals("acao")) {
 
-        } else if (paramAcao.equals("ListaEmpresa")) {
-
-        } else if (paramAcao.equals("ListaEmpresa")) {
+        } else if (paramAcao.equals("acao")) {
 
         }
     }
