@@ -37,6 +37,12 @@ public class Servlet extends HttpServlet {
         } else if (paramAcao.equals("removeEmpresa")) {
             removeEmpresa acao = new removeEmpresa();
             nome = acao.executa(request, response);
+        } else if (paramAcao.equals("Login")) {
+            Login acao = new Login();
+            nome = acao.executa(request, response);
+        } else if (paramAcao.equals("loginForm")) {
+            loginForm acao = new loginForm();
+            nome = acao.executa(request, response);
         }
         // aqui foi criada uma array para separar o nomes;
         // e tambem é uma condição;
@@ -44,7 +50,7 @@ public class Servlet extends HttpServlet {
         if (tipoEndereco[0].equals("forward")) {
             RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/view/" + tipoEndereco[1]);
             rd.forward(request, response);
-        }else{
+        } else {
             response.sendRedirect(tipoEndereco[1]);
         }
 

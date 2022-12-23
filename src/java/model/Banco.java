@@ -8,6 +8,7 @@ import model.Empresa;
 public class Banco {
 
     private static List<Empresa> lista = new ArrayList<>();
+    private static List<Usuario> listaUsuario = new ArrayList<>();
     private static Integer chaveSequencial = 1;
 
     static {
@@ -17,8 +18,15 @@ public class Banco {
         Empresa empresa2 = new Empresa();
         empresa2.setId(chaveSequencial++);
         empresa2.setName("Caelum");
+
+        Usuario usuario = new Usuario();
+        usuario.setLogin("Alessandro");
+        usuario.setSenha("12345");
+
         Banco.lista.add(empresa);
         Banco.lista.add(empresa2);
+
+        Banco.listaUsuario.add(usuario);
     }
 
     public void adicionar(Empresa empresa) {
@@ -44,9 +52,18 @@ public class Banco {
     }
 
     public Empresa buscaEmpresaPeloId(Integer id) {
-        for (Empresa empresa : lista){
-            if(empresa.getId() == id){
+        for (Empresa empresa : lista) {
+            if (empresa.getId() == id) {
                 return empresa;
+            }
+        }
+        return null;
+    }
+
+    public Usuario existeUsuario(String login, String senha) {
+        for (Usuario usuario : listaUsuario) {
+            if (usuario.ehIgual(login, senha)) {
+                return usuario;
             }
         }
         return null;
