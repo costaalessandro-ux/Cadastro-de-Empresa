@@ -1,4 +1,4 @@
-package servlet;
+package controller;
 
 import controller.ListaEmpresas;
 import controller.alterarEmpresa;

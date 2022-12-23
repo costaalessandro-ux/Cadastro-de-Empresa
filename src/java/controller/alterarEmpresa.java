@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controller;
 
 import java.io.IOException;
@@ -14,10 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import model.Banco;
 import model.Empresa;
 
-/**
- *
- * @author costa
- */
 public class alterarEmpresa {
     
     public String executar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{

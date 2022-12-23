@@ -2,7 +2,6 @@ package controller;
 
 import java.io.IOException;
 import java.util.List;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +15,7 @@ public class ListaEmpresas {
         List<Empresa> lista = banco.getEmpresas();
         request.setAttribute("lista", lista);
         // aqui irá mandar para a servlet, é tipo um dispatecher;
-        return "forward:ListaEmpresa.jsp";
+        return "forward:/ListaEmpresa.jsp";
     }
 
 }
