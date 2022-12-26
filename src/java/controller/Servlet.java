@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "Servlet", urlPatterns = {"/Servlet"})
 public class Servlet extends HttpServlet {
@@ -19,9 +20,31 @@ public class Servlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
+        
         String paramAcao = request.getParameter("acao");
+
+        HttpSession sessao = request.getSession();
+        boolean usuarioNaoEstaLogado = (sessao.getAttribute("usuarioLogado") == null);
+        boolean ehUmaAcaoProtegida = !(paramAcao.equals("Login") || paramAcao.equals("loginForm"));
+
+        if (ehUmaAcaoProtegida && usuarioNaoEstaLogado) {
+            response.sendRedirect("/Servlet?acao=loginForm");
+            return;
+        }
+
         String nome = null;
+
+        if (paramAcao.equals("Login")) {
+            Login acao = new Login();
+            nome = acao.executa(request, response);
+        } else if (paramAcao.equals("loginForm")) {
+            loginForm acao = new loginForm();
+            nome = acao.executa(request, response);
+        } else if (paramAcao.equals("Logout")) {
+            Logout acao = new Logout();
+            nome = acao.executa(request, response);
+        }
+
         if (paramAcao.equals("ListaEmpresas")) {
             ListaEmpresas acao = new ListaEmpresas();
             nome = acao.executa(request, response);
@@ -37,12 +60,6 @@ public class Servlet extends HttpServlet {
         } else if (paramAcao.equals("removeEmpresa")) {
             removeEmpresa acao = new removeEmpresa();
             nome = acao.executa(request, response);
-        } else if (paramAcao.equals("Login")) {
-            Login acao = new Login();
-            nome = acao.executa(request, response);
-        } else if (paramAcao.equals("loginForm")) {
-            loginForm acao = new loginForm();
-            nome = acao.executa(request, response);
         }
         // aqui foi criada uma array para separar o nomes;
         // e tambem é uma condição;
@@ -53,7 +70,6 @@ public class Servlet extends HttpServlet {
         } else {
             response.sendRedirect(tipoEndereco[1]);
         }
-
     }
 
     @Override

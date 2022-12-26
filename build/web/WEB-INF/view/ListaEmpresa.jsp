@@ -1,8 +1,8 @@
 <%@page import="java.util.List"%>
 <%@page import="model.Empresa"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
     List<Empresa> lista = (List<Empresa>) request.getAttribute("lista");
     String nomeEmpresa = (String) request.getAttribute("empresa");
@@ -18,12 +18,15 @@
     </head>
     <body>
         <!-- Utilizando JSTL -->
-        <h2>
-            <!-- Utilizando JSTL + expression language -->
-            <c:if test="${not empty empresa}">
-                <strong> A empresa ${ empresa } foi cadastrada com sucesso </strong>
-            </c:if>
-        </h2>   
+        <c:import url="logout-parcial.jsp" />      
+        <br>
+        <br>
+        <br>
+        Usuario Logado: ${usuarioLogado.login }
+        <br>
+        <br>
+        <br>
+        <!-- Utilizando JSTL + expression language -->
         <h1>Lista de Empresas </h1>
         <ul>
             <c:forEach items="${lista}" var="empresa">
@@ -34,7 +37,6 @@
                 </li>
             </c:forEach>
         </ul>
-
         </br>
         <a href='/index.html'>Voltar</a>
     </body>
