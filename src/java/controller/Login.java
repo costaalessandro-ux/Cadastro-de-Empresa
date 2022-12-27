@@ -9,6 +9,7 @@ import model.Usuario;
 public class Login {
 
     public String executa(HttpServletRequest request, HttpServletResponse response) {
+        
         String login = request.getParameter("login");
         String senha = request.getParameter("senha");
 

@@ -1,7 +1,10 @@
-package controller;
+package servlet;
 
 import controller.ListaEmpresas;
+import controller.Login;
+import controller.Logout;
 import controller.alterarEmpresa;
+import controller.loginForm;
 import controller.mostrarEmpresa;
 import controller.novaEmpresa;
 import controller.removeEmpresa;
@@ -22,7 +25,8 @@ public class Servlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
         String paramAcao = request.getParameter("acao");
-
+        
+        /*
         HttpSession sessao = request.getSession();
         boolean usuarioNaoEstaLogado = (sessao.getAttribute("usuarioLogado") == null);
         boolean ehUmaAcaoProtegida = !(paramAcao.equals("Login") || paramAcao.equals("loginForm"));
@@ -31,6 +35,7 @@ public class Servlet extends HttpServlet {
             response.sendRedirect("/Servlet?acao=loginForm");
             return;
         }
+        */
 
         String nome = null;
 
