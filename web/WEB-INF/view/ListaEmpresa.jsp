@@ -19,7 +19,7 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Cadastro de Empresas</a>
+                <a class="navbar-brand" href="#">Lista de Empresas</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -34,24 +34,18 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/Servlet?acao=Logout">Logout</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" >${usuarioLogado.login }</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <body>
-        <!-- Utilizando JSTL -->
-        <c:import url="logout-parcial.jsp" />      
-        <br>
-        <br>
-        <br>
-        Usuario Logado: ${usuarioLogado.login }
-        <br>
-        <br>
-        <br>
-        <!-- Utilizando JSTL + expression language -->
-        <h1>Lista de Empresas </h1>
         <ul>
+            <!-- Utilizando JSTL -->     
+            <!-- Utilizando JSTL + expression language -->
             <c:forEach items="${lista}" var="empresa">
                 <li>
                     ${ empresa.name } - <fmt:formatDate value="${ empresa.dataAbertura }" pattern="dd/MM/yyyy"/> 
@@ -60,7 +54,10 @@
                 </li>
             </c:forEach>
         </ul>
-        </br>
-        <a href='/Servlet?acao=novaEmpresaForm'>Voltar</a>
     </body>
+    <footer class="bg-dark text-light">
+    <div class="text-center" style="background-color: #333; padding: 20px;">
+        &copy 2018 Copyright:
+    </div>
+</footer>
 </html>

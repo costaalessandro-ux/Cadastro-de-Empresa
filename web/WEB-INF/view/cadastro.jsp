@@ -25,6 +25,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/Servlet?acao=Logout">Logout</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" >${usuarioLogado.login }</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -40,4 +43,9 @@
         </form>
         </br>
     </body>
+    <footer class="bg-dark text-light">
+    <div class="text-center" style="background-color: #333; padding: 20px;">
+        &copy 2018 Copyright:
+    </div>
+</footer>
 </html>
