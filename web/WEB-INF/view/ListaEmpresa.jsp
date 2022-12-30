@@ -38,6 +38,6 @@
             </c:forEach>
         </ul>
         </br>
-        <a href='/index.html'>Voltar</a>
+        <a href='/Servlet?acao=novaEmpresaForm'>Voltar</a>
     </body>
 </html>

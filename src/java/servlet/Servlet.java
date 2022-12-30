@@ -7,6 +7,7 @@ import controller.alterarEmpresa;
 import controller.loginForm;
 import controller.mostrarEmpresa;
 import controller.novaEmpresa;
+import controller.novaEmpresaForm;
 import controller.removeEmpresa;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
@@ -56,6 +57,9 @@ public class Servlet extends HttpServlet {
         } else if (paramAcao.equals("novaEmpresa")) {
             novaEmpresa acao = new novaEmpresa();
             nome = acao.executar(request, response);
+        }else if (paramAcao.equals("novaEmpresaForm")) {
+            novaEmpresaForm acao = new novaEmpresaForm();
+            nome = acao.executa(request, response);
         } else if (paramAcao.equals("mostrarEmpresa")) {
             mostrarEmpresa acao = new mostrarEmpresa();
             nome = acao.executar(request, response);

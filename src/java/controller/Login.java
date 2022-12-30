@@ -21,7 +21,7 @@ public class Login {
             //tem relação com o tempo que o usuário esta logado;
             HttpSession sessao = request.getSession();
             sessao.setAttribute("usuarioLogado", usuario);
-            return "redirect:/Servlet?acao=ListaEmpresas";
+            return "forward:cadastro.jsp";
         } else {
             return "redirect:/Servlet?acao=loginForm";
         }
