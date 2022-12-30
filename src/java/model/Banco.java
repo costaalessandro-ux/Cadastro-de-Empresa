@@ -14,7 +14,7 @@ public class Banco {
     static {
 
         Usuario usuario = new Usuario();
-        usuario.setLogin("Alessandro");
+        usuario.setLogin("alessandrocosta@gmail.com");
         usuario.setSenha("12345");
 
         Banco.listaUsuario.add(usuario);
