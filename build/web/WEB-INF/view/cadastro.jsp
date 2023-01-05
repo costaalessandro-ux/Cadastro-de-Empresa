@@ -4,7 +4,7 @@
         <title>Cadastro de Empresas</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./assets/style/cadastro.css"/>
+        <link rel="stylesheet" href="../../assets/style/cadastro.css" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     </head>
     <header>
@@ -38,8 +38,10 @@
             <input type="hidden" name="acao" id="acao" value="novaEmpresa">
             <input class="form-control form-control-lg" type="text" name="nome" id="nome" placeholder="company name" aria-label=".form-control-lg example" required></br>
             <input class="form-control form-control-lg" type="text" name="data" id="data" placeholder="date" aria-label=".form-control-lg example" required></br>
+            <div class="buttons">
             <button class="btn btn-primary btn-lg " type="submit">to send</button>
             <button class="btn btn-danger btn-lg" type="reset">clean</button>
+            </div>
         </form>
         </br>
     </body>

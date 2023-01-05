@@ -1,23 +1,22 @@
-html,
-body {
-    height: 100%;
+*{
+    padding: 0;
+    margin: 0;
 }
+
+header{
+   height: 100%; 
+   background-color: red;
+   margin-bottom: 120px;
+}
+
 .form-control {
     width: 100%;
     max-width: 500px;
     padding: 15px;
     margin: 0 auto;
 }
-.form-control form-control-lg {
-    position: relative;
-    box-sizing: border-box;
-    height: auto;
-    padding: 10px;
-    
-}
-.form-control .form-control:focus {
-    z-index: 2;
-}
+
+
 .form-control input[type="nome"] {
     margin-bottom: -1px;
     border-bottom-right-radius: 0;
@@ -30,7 +29,20 @@ body {
     border-top-right-radius: 0;
 
 }
-.form-control button {
-    width: 100%;
-}
+.form-control button[type="submit"] {
+    margin: 0 auto;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 
+}
+.form-control button[type="reset"] {
+    align-items: center;
+    margin: 0 auto;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: yellow;
+}
+footer{
+    margin-top: 175px;
+    width:  100%; 
+}
