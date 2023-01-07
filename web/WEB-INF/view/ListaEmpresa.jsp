@@ -43,21 +43,35 @@
         </nav>
     </header>
     <body>
-        <ul>
-            <!-- Utilizando JSTL -->     
-            <!-- Utilizando JSTL + expression language -->
-            <c:forEach items="${lista}" var="empresa">
-                <li>
-                    ${ empresa.name } - <fmt:formatDate value="${ empresa.dataAbertura }" pattern="dd/MM/yyyy"/> 
-                    <a href="/Servlet?acao=removeEmpresa&id=${ empresa.id }">remove</a>
-                    <a href="/Servlet?acao=mostrarEmpresa&id=${ empresa.id }">alterar</a>
-                </li>
-            </c:forEach>
-        </ul>
+        <!-- Utilizando JSTL -->     
+        <!-- Utilizando JSTL + expression language -->
+        <table class="table table-dark table-striped-columns">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th rowspan="1" scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <c:forEach items="${lista}" var="empresa">
+                    <tr>
+                        <th scope="row">${ empresa.id }</th>
+                        <td>${ empresa.name }</td>
+                        <td><fmt:formatDate value="${ empresa.dataAbertura }" pattern="dd/MM/yyyy"/></td>
+                        <td >
+                            <a href="/Servlet?acao=removeEmpresa&id=${ empresa.id }">remove</a>
+                            <a href="/Servlet?acao=mostrarEmpresa&id=${ empresa.id }">alterar</a>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
     </body>
     <footer class="bg-dark text-light">
-    <div class="text-center" style="background-color: #333; padding: 20px;">
-        &copy 2018 Copyright:
-    </div>
-</footer>
+        <div class="text-center" style="background-color: #333; padding: 20px;">
+            &copy 2018 Copyright:
+        </div>
+    </footer>
 </html>

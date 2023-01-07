@@ -2,47 +2,41 @@
     padding: 0;
     margin: 0;
 }
-
 header{
    height: 100%; 
-   background-color: red;
    margin-bottom: 120px;
 }
-
 .form-control {
     width: 100%;
     max-width: 500px;
     padding: 15px;
     margin: 0 auto;
 }
-
-
 .form-control input[type="nome"] {
     margin-bottom: -1px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
-    
 }
 .form-control input[type="data"] {
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-
+    
+}
+.buttons{
+    text-align: center;
+    width: 250px;
+    margin-left: 20%;
 }
 .form-control button[type="submit"] {
     margin: 0 auto;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-
+    
 }
 .form-control button[type="reset"] {
-    align-items: center;
     margin: 0 auto;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    background-color: yellow;
+    
 }
 footer{
-    margin-top: 175px;
+    margin-top: 179px;
     width:  100%; 
 }

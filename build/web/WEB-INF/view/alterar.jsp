@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="./assets/style/style.css"/>
+        <link rel="stylesheet" href="../../assets/style/alterar.css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
@@ -36,13 +36,15 @@
         </nav>
     </header>
     <body>
-        <form action="/Servlet" method="post">
+        <form class="form-control" action="/Servlet" method="post">
             <input type="hidden" name="acao" id="acao" value="alterarEmpresa">
             <input type="hidden" name="id" id="id" value="${empresa.id}">
-            <input class="form-control form-control-lg" type="text" name="nome" id="nome" placeholder="${empresa.name}" aria-label=".form-control-lg example" required></br>
-            <input class="form-control form-control-lg" type="text" name="data" id="data" placeholder="<fmt:formatDate value="${ empresa.dataAbertura }" pattern="dd/MM/yyyy"/>" aria-label=".form-control-lg example" required></br>
-            <button class="btn btn-primary btn-lg " type="submit">to send</button>
+            <input class="form-control form-control-lg" type="text" name="nome" id="nome" value="${empresa.name}" aria-label=".form-control-lg example" required></br>
+            <input class="form-control form-control-lg" type="text" name="data" id="data" value="<fmt:formatDate value="${ empresa.dataAbertura }" pattern="dd/MM/yyyy"/>" aria-label=".form-control-lg example" required></br>
+            <div class="buttons">
+            <button class="btn btn-primary btn-lg" type="submit">to send</button>
             <button class="btn btn-danger btn-lg" type="reset">clean</button>
+            </div>
         </form>
     </body>
     <footer class="bg-dark text-light">
