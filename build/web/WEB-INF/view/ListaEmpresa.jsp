@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="./assets/style/lista.css"/>
+        <link rel="stylesheet" href="../../assets/style/lista.css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>java Stabdard TagLib</title>
@@ -46,8 +46,10 @@
         <!-- Utilizando JSTL -->     
         <!-- Utilizando JSTL + expression language -->
         <table class="table table-dark table-striped-columns">
+            <caption>
+                Empresas Cadastradas
+            </caption>
             <thead>
-                <h1>Empresas Cadastradas</h1>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">First</th>
