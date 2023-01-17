@@ -47,6 +47,7 @@
         <!-- Utilizando JSTL + expression language -->
         <table class="table table-dark table-striped-columns">
             <thead>
+                <h1>Empresas Cadastradas</h1>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">First</th>
